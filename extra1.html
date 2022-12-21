@@ -46,6 +46,7 @@
         const gridMaker = function(n) {
             let cont = document.querySelector(".container");
             cont.innerHTML = "";
+            cont.style.fontSize = `${336/n}px`;
             for (let i=0; i<n; i++) {
                 let col = document.createElement("div");
                 col.className = "col";
