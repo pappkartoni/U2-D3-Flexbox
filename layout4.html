@@ -14,7 +14,8 @@
             height: 100vh;
         }
         p {
-            margin-left: 1rem;
+            margin: 0;
+            padding: 1em;
         }
         .container {
             height: 100%;
@@ -22,64 +23,56 @@
         .visible {
             height: 100%;
             display: flex;
-            flex-flow: column;
-        }
-        .row {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 10;
+            flex-flow: row wrap;
+            align-content: flex-start;
         }
         header, footer {
             background-color: black;
             color: white;
-            overflow: auto;
+            height: 10vh;
         }
         header {
-            flex: 1 5%;
+            height: 20vh;
+            flex: 0 0 100%;
         }
         article {
-            flex: 1 90%;
+            flex: 0 0 80%;
+            height: 80vh;
         }
         nav {
             background-color: #C22277;
             color: white;
-            flex: 1 5%;
+            flex: 0 0 10%;
+            height: 80vh;
         }
         aside {
             background: #320388;
             color: white;
-            flex: 1 5%;
+            flex: 0 0 10%;
+            height: 80vh;
         }
-
-            /* I didnt quite finish the "tablet" part */
-/*         @media screen and (min-width: 800px) {
-            .row {
-                display: flex;
-                flex-direction: row wrap;
-                flex-grow: 10;
-            }
-            article {
-             flex: 1 auto;
-            }
+        @media screen and (max-width: 1200px) {
             nav {
-                flex: 1 100%;
-            }   
-            aside {
-                flex: 1 auto;
-            }
-        }
- */
-        @media screen and (min-width: 1200px) {
-            .row {
-                display: flex;
-                flex-direction: row;
-                flex-grow: 10;
+                height: 10vh;
+                flex: 0 0 100%;
             }
             article {
-                flex: 1 80%;
+                height: 70vh;
+                flex: 0 0 80%;
             }
-            nav, aside {
-                flex: 1 10%;
+            aside {
+                height: 70vh;
+                flex: 0 0 20%;
+            }
+        } 
+        @media screen and (max-width: 700px) {
+            article {
+                height: 60vh;
+                flex: 0 0 100%;
+            }
+            aside {
+                height: 10vh;
+                flex: 0 0 100%;
             }
         } 
     </style>
@@ -88,11 +81,11 @@
     <div class="container">
         <div class="visible">
             <header><p>Header</p></header>
-            <div class="row">
+
                 <nav><p>Nav</p></nav>
                 <article><p>Article</p></article>
                 <aside><p>Aside</p></aside>
-            </div>
+
         </div>
         <footer><p>Footer</p></footer>
     </div>
