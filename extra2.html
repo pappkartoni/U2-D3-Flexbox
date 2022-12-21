@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra 2</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 5px;
+            box-sizing: border-box;
+            color: whitesmoke;
+        }
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            border-radius: 50px;
+            display: flex;
+            align-items: stretch;
+            border: 3px solid black;
+            overflow: hidden;
+        }
+        .col1 {
+            height: 400px;
+            background-color: #88B46F;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-basis: 50%;
+            text-align: center;
+            border-right: 3px solid black;
+        }
+        .col2 {
+            background-color: #699AFC;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            flex: 1;
+            font-weight: bold;
+        }
+        .col3 {
+            display: flex;
+            align-items: stretch;
+            flex-direction: column;
+            flex: 2;
+        }
+        .row {
+            background-color: #F7ED73;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+        }
+        .row:first-of-type {
+            background-color: #FBF7C0;
+        }
+        .row:last-of-type {
+            background-color: #F4E43E;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col1">
+            <p>First Column<br>
+                Height: 400px<br>
+                Green-ish background<br>
+                Text centered
+            </p>
+        </div>
+        <div class="col2">
+            <p>Second Column<br>
+                Text to the bottom<br>
+                Bold, blueish<br>
+                background<br>
+            </p>
+        </div>
+        <div class="col3">
+            <div class="row">Third column Part 1</div>
+            <div class="row">Third column Part 2</div>
+            <div class="row">Third column Part 3</div>
+        </div>
+    </div>
+</body>
+</html>
