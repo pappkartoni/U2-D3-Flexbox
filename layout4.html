@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout 2</title>
+    <!-- I didn't finish this -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            height: 100vh;
+        }
+        p {
+            margin-left: 1rem;
+        }
+        .container {
+            height: 100%;
+        }
+        .visible {
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+        }
+        .row {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 10;
+        }
+        header, footer {
+            background-color: black;
+            color: white;
+            overflow: auto;
+        }
+        header {
+            flex: 1 5%;
+        }
+        article {
+            flex: 1 90%;
+        }
+        nav {
+            background-color: #C22277;
+            color: white;
+            flex: 1 5%;
+        }
+        aside {
+            background: #320388;
+            color: white;
+            flex: 1 5%;
+        }
+
+            /* I didnt quite finish the "tablet" part */
+/*         @media screen and (min-width: 800px) {
+            .row {
+                display: flex;
+                flex-direction: row wrap;
+                flex-grow: 10;
+            }
+            article {
+             flex: 1 auto;
+            }
+            nav {
+                flex: 1 100%;
+            }   
+            aside {
+                flex: 1 auto;
+            }
+        }
+ */
+        @media screen and (min-width: 1200px) {
+            .row {
+                display: flex;
+                flex-direction: row;
+                flex-grow: 10;
+            }
+            article {
+                flex: 1 80%;
+            }
+            nav, aside {
+                flex: 1 10%;
+            }
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="visible">
+            <header><p>Header</p></header>
+            <div class="row">
+                <nav><p>Nav</p></nav>
+                <article><p>Article</p></article>
+                <aside><p>Aside</p></aside>
+            </div>
+        </div>
+        <footer><p>Footer</p></footer>
+    </div>
+    <script>
+        const footerSizeSetter =  function() {
+            document.querySelector("footer").style.height = `${document.querySelector("header").clientHeight}px`; // the jank is back
+        } 
+        window.onload = footerSizeSetter;
+        window.onresize = footerSizeSetter;
+    </script>
+</body>
+</html>
